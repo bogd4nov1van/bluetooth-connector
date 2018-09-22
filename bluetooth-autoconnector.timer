@@ -1,0 +1,9 @@
+[Unit]
+Description=connect to device bluetooth-autoconnector.ps1
+ 
+[Timer]
+OnCalendar=*:*:0/5
+AccuracySec=1sec
+ 
+[Install]
+WantedBy=timers.target
