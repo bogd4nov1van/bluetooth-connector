@@ -5,8 +5,9 @@ param(
     [string]$mac
 )
 
-[string]$status = "info" | bluetoothctl
+[string]$status = "info $mac" | bluetoothctl
 
-if($status -notlike '*Connected: yes*'){
+if($status -notlike '*Missing*' -and $status -notlike '*Connected: yes*'){
+    "1"
     "connect $mac" | bluetoothctl
 }
